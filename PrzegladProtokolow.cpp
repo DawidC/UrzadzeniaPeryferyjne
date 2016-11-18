@@ -151,7 +151,7 @@ int main(int argc, char** argv)
 					result = WSALookupServiceBegin(&querySet2, flags, &hLookup2);
 					if (result == 0)
 					{
-						printf("Protokoly:\n");
+						printf("\nProtokoly:\n");
 						while (result == 0)
 						{
 							bufferLength1 = sizeof(buffer1);
@@ -163,7 +163,7 @@ int main(int argc, char** argv)
 							if (result == 0)
 							{
 								// Zapelniamy
-								printf("\tNazwa protokolu: %S\n",
+								printf("Nazwa protokolu: %S\n",
 									pResults->lpszServiceInstanceName);
 								printf("\tJakis komentarz:: %s\n", pResults->lpszComment);
 								pCSAddr = (CSADDR_INFO *)pResults->lpcsaBuffer;
@@ -177,7 +177,7 @@ int main(int argc, char** argv)
 									}
 									else
 									{
-										printf("Protokul #%d is OK!\n", i++);
+										printf("\tProtokul #%d dziala!\n", i++);
 									}
 								}
 							}
