@@ -1,5 +1,7 @@
 // No to tak. Jak masz parę dongli z BT to wybieramy pierwszy
 // skanujemy ile wlezie, wyświetlamy i idziemy do kolejnego dongla.
+// Do tego dla znalezionych Dongli szukamy urzadzen Nimi.
+// ELo
 // I tyle :>
 
 #include <stdlib.h>
