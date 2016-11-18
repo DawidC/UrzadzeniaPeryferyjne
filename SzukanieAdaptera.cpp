@@ -36,95 +36,95 @@ int main()
 	int Urzadzenie_ID;
 	DWORD Info;
 
-/*****************************************************************************************************/
+	/*****************************************************************************************************/
 	//while (TRUE)
 	//{
-/*****************************************************************************************************/
-		MamyDongiel = BluetoothFindFirstRadio(&MamyDongiel_find_radio, &dongiel);
+	/*****************************************************************************************************/
+	MamyDongiel = BluetoothFindFirstRadio(&MamyDongiel_find_radio, &dongiel);
 
-		if (MamyDongiel != NULL)
-			printf("Mamy Dongiel\n");
-		else
-			printf("No cos sie posypalo. Kod bledu: %d\n", GetLastError());
+	if (MamyDongiel != NULL)
+		printf("Mamy Dongiel\n");
+	else
+		printf("No cos sie posypalo. Kod bledu: %d\n", GetLastError());
 
-		Dongiel_ID = 0;
+	Dongiel_ID = 0;
 
-/*****************************************************************************************************/
-		//do {
-/*****************************************************************************************************/
-			Info = BluetoothGetRadioInfo(dongiel, &MamyDongiel_info);
-			if (Info == ERROR_SUCCESS)
-				printf("No to info zebrane!\n");
-			else
-				printf("No cos sie posypalo. Kod bledu: %d\n", Info);
+	/*****************************************************************************************************/
+	//do {
+	/*****************************************************************************************************/
+	Info = BluetoothGetRadioInfo(dongiel, &MamyDongiel_info);
+	if (Info == ERROR_SUCCESS)
+		printf("No to info zebrane!\n");
+	else
+		printf("No cos sie posypalo. Kod bledu: %d\n", Info);
 
-			wprintf(L"Radio %d:\r\n", Dongiel_ID);
-			wprintf(L"\tNazwa: %s\r\n", MamyDongiel_info.szName);
-			wprintf(L"\tAdres: %02X:%02X:%02X:%02X:%02X:%02X\r\n", MamyDongiel_info.address.rgBytes[5],
-				MamyDongiel_info.address.rgBytes[4], MamyDongiel_info.address.rgBytes[3], MamyDongiel_info.address.rgBytes[2],
-				MamyDongiel_info.address.rgBytes[1], MamyDongiel_info.address.rgBytes[0]);
-			wprintf(L"\tKlasa: 0x%08x\r\n", MamyDongiel_info.ulClassofDevice);
-			wprintf(L"\tWykonawca Dongla: 0x%04x\r\n", MamyDongiel_info.manufacturer);
+	wprintf(L"Radio %d:\r\n", Dongiel_ID);
+	wprintf(L"\tNazwa: %s\r\n", MamyDongiel_info.szName);
+	wprintf(L"\tAdres: %02X:%02X:%02X:%02X:%02X:%02X\r\n", MamyDongiel_info.address.rgBytes[5],
+		MamyDongiel_info.address.rgBytes[4], MamyDongiel_info.address.rgBytes[3], MamyDongiel_info.address.rgBytes[2],
+		MamyDongiel_info.address.rgBytes[1], MamyDongiel_info.address.rgBytes[0]);
+	wprintf(L"\tKlasa: 0x%08x\r\n", MamyDongiel_info.ulClassofDevice);
+	wprintf(L"\tWykonawca Dongla: 0x%04x\r\n", MamyDongiel_info.manufacturer);
 
-			m_search_params.hRadio = dongiel;
-			ZeroMemory(&m_device_info, sizeof(BLUETOOTH_DEVICE_INFO));
-			m_device_info.dwSize = sizeof(BLUETOOTH_DEVICE_INFO);
+	m_search_params.hRadio = dongiel;
+	ZeroMemory(&m_device_info, sizeof(BLUETOOTH_DEVICE_INFO));
+	m_device_info.dwSize = sizeof(BLUETOOTH_DEVICE_INFO);
 
-			// Szukanie Urzadzonek
-			MamyUrzadzenie = BluetoothFindFirstDevice(&m_search_params, &m_device_info);
+	// Szukanie Urzadzonek
+	MamyUrzadzenie = BluetoothFindFirstDevice(&m_search_params, &m_device_info);
 
-			if (MamyUrzadzenie != NULL)
-				printf("\nA dziala tu jakies urzadzenie?\n");
-			else
-				printf("\nCos sie popsulo i nie bylo mnie slychac %d\n", GetLastError());
+	if (MamyUrzadzenie != NULL)
+		printf("\nA dziala tu jakies urzadzenie?\n");
+	else
+		printf("\nCos sie popsulo i nie bylo mnie slychac %d\n", GetLastError());
 
-			Dongiel_ID++;
-			Urzadzenie_ID = 0;
-			
-			// Info o urzadzonku
-			do
-			{
-				wprintf(L"\n\tUrzadzenie %d:\r\n", Urzadzenie_ID);
-				wprintf(L"  \tNazwa: %s\r\n", m_device_info.szName);
-				wprintf(L"  \tAdres: %02X:%02X:%02X:%02X:%02X:%02X\r\n", m_device_info.Address.rgBytes[5],
-					m_device_info.Address.rgBytes[4], m_device_info.Address.rgBytes[3], m_device_info.Address.rgBytes[2],
-					m_device_info.Address.rgBytes[1], m_device_info.Address.rgBytes[0]);
-				wprintf(L"  \tKlasa: 0x%08x\r\n", m_device_info.ulClassofDevice);
-				wprintf(L"  \tPolaczony?: %s\r\n", m_device_info.fConnected ? L"true" : L"false");
-				wprintf(L"  \tAutentykacja?: %s\r\n", m_device_info.fAuthenticated ? L"true" : L"false");
-				wprintf(L"  \tZapamietany?: %s\r\n", m_device_info.fRemembered ? L"true" : L"false");
-				Urzadzenie_ID++;
+	Dongiel_ID++;
+	Urzadzenie_ID = 0;
 
-				// Super rzeczy bulwo
-				if (!BluetoothFindNextDevice(MamyUrzadzenie, &m_device_info))
-					break;
+	// Info o urzadzonku
+	do
+	{
+		wprintf(L"\n\tUrzadzenie %d:\r\n", Urzadzenie_ID);
+		wprintf(L"  \tNazwa: %s\r\n", m_device_info.szName);
+		wprintf(L"  \tAdres: %02X:%02X:%02X:%02X:%02X:%02X\r\n", m_device_info.Address.rgBytes[5],
+			m_device_info.Address.rgBytes[4], m_device_info.Address.rgBytes[3], m_device_info.Address.rgBytes[2],
+			m_device_info.Address.rgBytes[1], m_device_info.Address.rgBytes[0]);
+		wprintf(L"  \tKlasa: 0x%08x\r\n", m_device_info.ulClassofDevice);
+		wprintf(L"  \tPolaczony?: %s\r\n", m_device_info.fConnected ? L"true" : L"false");
+		wprintf(L"  \tAutentykacja?: %s\r\n", m_device_info.fAuthenticated ? L"true" : L"false");
+		wprintf(L"  \tZapamietany?: %s\r\n", m_device_info.fRemembered ? L"true" : L"false");
+		Urzadzenie_ID++;
 
-			} while (BluetoothFindNextDevice(MamyUrzadzenie, &m_device_info));
+		// Super rzeczy bulwo
+		if (!BluetoothFindNextDevice(MamyUrzadzenie, &m_device_info))
+			break;
 
-			// Zamykamy bo urzadzen nie mamy
-			if (BluetoothFindDeviceClose(MamyUrzadzenie) == TRUE)
-				printf("\nBluetoothFindDeviceClose(MamyUrzadzenie) is OK!\n");
-			else
-				printf("\nBluetoothFindDeviceClose(MamyUrzadzenie) failed with error code %d\n", GetLastError());
-/*****************************************************************************************************/
-		//} while (BluetoothFindNextRadio(&MamyDongiel_find_radio, &dongiel));
-/*****************************************************************************************************/
+	} while (BluetoothFindNextDevice(MamyUrzadzenie, &m_device_info));
 
-		// Zamykamy bo urzadzen nie mamy
-		if (BluetoothFindRadioClose(MamyDongiel) == TRUE)
-			printf("BluetoothFindRadioClose(MamyDongiel) is OK!\n");
-		else
-			printf("BluetoothFindRadioClose(MamyDongiel) failed with error code %d\n", GetLastError());
+	// Zamykamy bo urzadzen nie mamy
+	if (BluetoothFindDeviceClose(MamyUrzadzenie) == TRUE)
+		printf("\nZamykamy Szuaknie Urzadzen!\n");
+	else
+		printf("\nCos sie ten tego. Kod bledu: %d\n", GetLastError());
+	/*****************************************************************************************************/
+	//} while (BluetoothFindNextRadio(&MamyDongiel_find_radio, &dongiel));
+	/*****************************************************************************************************/
 
-/*****************************************************************************************************/
-		// Exit the outermost WHILE and BluetoothFindXXXXRadio loops if there is no more radio
-		/*if (!BluetoothFindNextRadio(&MamyDongiel_find_radio, &dongiel))
-			break;*/
+	// Zamykamy bo urzadzen nie mamy
+	if (BluetoothFindRadioClose(MamyDongiel) == TRUE)
+		printf("Szykanie Radyja tez konczymy\n");
+	else
+		printf("Cos sie ten tego. Kod bledu: %d\n", GetLastError());
 
-		// Give some time for the 'signal' which is a typical for crap wireless devices
-		//Sleep(1000);
+	/*****************************************************************************************************/
+	// Exit the outermost WHILE and BluetoothFindXXXXRadio loops if there is no more radio
+	/*if (!BluetoothFindNextRadio(&MamyDongiel_find_radio, &dongiel))
+	break;*/
+
+	// Give some time for the 'signal' which is a typical for crap wireless devices
+	//Sleep(1000);
 	//}
-/*****************************************************************************************************/
+	/*****************************************************************************************************/
 	system("pause");
 	return 0;
 }
