@@ -1,1 +1,3 @@
-# UP18.11.2016
+# Urzadzenia Peryferyjne rozne pomysly
+
+Przez `/******/` rozmiwmy tak zwane sekcje WTF
