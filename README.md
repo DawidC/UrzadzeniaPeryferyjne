@@ -1,9 +1,7 @@
-# Urzadzenia Peryferyjne
-
 # Wykonane:
 * Joystick(Ocena : 5)
-* Karty SIM(Ocena : 5)
-* Bluetoth(Ocena : 5)
+* Karty SIM(Ocena : 4)
+* Bluetoth(Ocena : 3,5) - będzie poprawiane
 
 # Notatki:
 
