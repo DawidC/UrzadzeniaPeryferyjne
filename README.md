@@ -1,5 +1,12 @@
-# Urzadzenia Peryferyjne rozne pomysly
+# Urzadzenia Peryferyjne
+
+# Wykonane:
+* Joystick(Ocena : 5)
+* Karty SIM(Ocena : 5)
+* Bluetoth(Ocena : 5)
+
+# Notatki:
 
 Przez `/******/` rozmiwmy tak zwane sekcje WTF
 
-[PomocOstateczne](http://www.winsocketdotnetworkprogramming.com/winsock2programming/winsock2advancedotherprotocol4p.html)
+[Jak sa jakies pytania to zapraszam tutaj!](https://www.facebook.com/profile.php?id=100000919813090)
