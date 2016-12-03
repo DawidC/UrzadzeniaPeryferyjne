@@ -1,7 +1,8 @@
 # Wykonane:
 * Joystick(Ocena : 5)
 * Karty SIM(Ocena : 4)
-* Bluetoth(Ocena : 3,5) - będzie poprawiane
+* Bluetoth(Ocena : 5)
+* Silnik Krokowy(Ocena : 4)
 
 # Notatki:
 
