@@ -3,6 +3,7 @@
 * Karty SIM(Ocena : 4)
 * Bluetoth(Ocena : 5)
 * Silnik Krokowy(Ocena : 4)
+* Karta Muzyczna(Ocena : 4)
 
 # Notatki:
 
