@@ -4,6 +4,7 @@
 * Bluetoth(Ocena : 5)
 * Silnik Krokowy(Ocena : 4)
 * Karta Muzyczna(Ocena : 4)
+* Kody Kreskowe(Ocena : 5)
 
 # Notatki:
 
