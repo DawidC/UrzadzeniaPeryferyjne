@@ -5,6 +5,7 @@
 * Silnik Krokowy(Ocena : 4)
 * Karta Muzyczna(Ocena : 4)
 * Kody Kreskowe(Ocena : 5)
+* Kamera(Ocena: 4)
 
 # Notatki:
 

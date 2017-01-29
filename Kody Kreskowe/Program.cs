@@ -30,8 +30,10 @@ namespace ConsoleApplication1 {
             e.Graphics.DrawImage(img, loc);
         }
         static void Main(string[] args) {
+            //Generowanie zmiennych
             Image img = null;
             int szerokosc = 200;
+            //Generowanie Sumy kontrolnej
             Console.Write("Ręcę do góry! Wyskakuj z kodu. 12 cyferek. Ale już! ");
             String kod = Console.ReadLine();
             long.Parse(kod);
@@ -49,6 +51,7 @@ namespace ConsoleApplication1 {
                 Console.WriteLine("Podaj dokladnie 12 cyfr kodu");
             }
             else {
+                //Generowanie Kodu Kreskowego
                 BarcodeLib.Barcode barcode = new BarcodeLib.Barcode();
                 barcode.LabelFont = new Font(barcode.LabelFont.FontFamily, szerokosc / 15);
                 barcode.IncludeLabel = true;
@@ -59,11 +62,11 @@ namespace ConsoleApplication1 {
                      img.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
                      fs.Close();
                  }
-                //OTWIERANIE
+                //Otwieranie
                 string komenda;
                 komenda = "/C C:\\Users\\lab\\Desktop\\MikolajJarek\\ConsoleApplication1\\ConsoleApplication1\\bin\\Debug\\kot.png";
                 System.Diagnostics.Process.Start("cmd", komenda);
-                //DRUKOWANIE
+                //Drukowanie
                 Druk();     
             }
              Console.ReadLine();   
